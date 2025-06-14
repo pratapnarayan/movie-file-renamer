@@ -1,0 +1,27 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+#logs-output {
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.form-control.is-edited {
+    background-color: #e2f0d9; /* A light green to indicate manual edit */
+}
