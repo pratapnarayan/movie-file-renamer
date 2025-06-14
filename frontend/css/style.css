@@ -15,6 +15,11 @@ body {
     vertical-align: middle;
 }
 
+.suggestion-btn {
+    text-decoration: none;
+    text-align: left;
+}
+
 #logs-output {
     max-height: 300px;
     overflow-y: auto;
