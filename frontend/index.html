@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+k<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,22 +30,54 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col" class="text-center"><input class="form-check-input" type="checkbox" id="selectAll" title="Select All"></th>
+                        <th scope="col" class="text-center"><input class="form-check-input" type="checkbox" id="selectAll"></th>
                         <th scope="col">Original Filename</th>
-                        <th scope="col">Suggested Name</th>
+                        <th scope="col">Suggested Title</th>
                         <th scope="col">New Name (Editable)</th>
                     </tr>
                 </thead>
                 <tbody id="file-list-body"></tbody>
             </table>
-            <div class="d-grid gap-2 col-6 mx-auto mt-3">
-                <button id="rename-btn" class="btn btn-success btn-lg">Rename Selected Files</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                <button id="rename-btn" class="btn btn-success btn-lg me-md-2">Rename Selected Files</button>
+                <button id="skip-to-cleanup-btn" class="btn btn-secondary btn-lg">Skip to Cleanup</button>
             </div>
+            <nav id="pagination-container" class="d-flex justify-content-center mt-4 d-none" aria-label="Page navigation">
+                <ul class="pagination" id="pagination-controls"></ul>
+            </nav>
         </div>
 
         <div id="logs-container" class="mt-4 d-none">
             <h3>Logs</h3>
             <pre id="logs-output" class="bg-light p-3 rounded"></pre>
+            <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                <button id="proceed-to-cleanup-btn" class="btn btn-info btn-lg d-none">Proceed to Cleanup</button>
+            </div>
+        </div>
+
+        <!-- Cleanup Section -->
+        <div id="cleanup-section" class="d-none">
+            <hr class="my-5">
+            <header class="text-center mb-4">
+                <h2>🧹 Folder Cleanup</h2>
+                <p class="lead">Move large files to the root and delete small, empty, or unnecessary subdirectories.</p>
+            </header>
+
+            <div class="row">
+                <!-- Large Files -->
+                <div class="col-md-6">
+                    <h4>Large Files (>500MB)</h4>
+                    <div id="large-files-list" class="list-group mb-3"></div>
+                    <button id="move-files-btn" class="btn btn-warning">Move Selected to Root</button>
+                </div>
+
+                <!-- Small Directories -->
+                <div class="col-md-6">
+                    <h4>Small Subdirectories (≤500MB)</h4>
+                    <div id="small-dirs-list" class="list-group mb-3"></div>
+                    <button id="delete-folders-btn" class="btn btn-danger">Delete Selected</button>
+                </div>
+            </div>
         </div>
 
     </div>

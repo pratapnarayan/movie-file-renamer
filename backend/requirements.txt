@@ -2,3 +2,4 @@ Flask
 requests
 pymongo
 Flask-Cors
+send2trash

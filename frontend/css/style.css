@@ -30,3 +30,14 @@ body {
 .form-control.is-edited {
     background-color: #e2f0d9; /* A light green to indicate manual edit */
 }
+
+/* Cleanup Section Styles */
+#large-files-list .list-group-item,
+#small-dirs-list .list-group-item {
+    cursor: pointer;
+}
+
+#large-files-list .list-group-item:hover,
+#small-dirs-list .list-group-item:hover {
+    background-color: #f1f1f1;
+}
